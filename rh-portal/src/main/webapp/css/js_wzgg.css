@@ -1,0 +1,27 @@
+
+.clear{clear:both;}
+
+.fl{float:left;}
+.fr{float:right;}
+.tr{text-align:right;}
+
+
+
+/*鎺ㄨ崘搴旂敤 鎺ㄨ崘涓嬭浇*/
+.sub_tjyy{display:inline-block;}
+.left_list{width:230px; background-color:#fff; float:left; border:1px solid #dfdfdf; margin-right:10px;}
+.left_list .colyy li{background-color:#2d80e6; height:70px; line-height:70px; padding-left:25px;}
+.left_list .colyy li img{margin-right:5px;}
+.left_list span{color:#fff; font-size:20px;}
+.left_list ol li{ height:50px; background-color:#fff; line-height:50px; border-bottom:1px dashed #d4d4d4; cursor:pointer; display:block; padding-left:27px;}
+.left_list ol li:hover{color:#2d80e6; background-color:#fafafa;}
+.left_list ol .wjlb{background-color:#fafafa;color:#2d80e6; }
+.right_list{width:100%; background:#fff;min-height:300px;}
+.right_list ul li{ height:100px; margin-top:15px; border-bottom:1px dashed #d4d4d4;}
+.right_list ul li .fl{margin-right:15px;}
+.right_list ul li .fl img{width:64px;height:64px;overflow:hidden;}
+.right_list ul li .wz{float:left; width:450px; height:30px; line-height:30px;}
+.right_list ul li .wz p{color:#666;}
+.right_list ul li .btn_jr{border-radius:4px;width:110px;height:35px;line-height:35px;background:#2d80e6;text-align:center; float:right; display:block; margin-top:15px; color:#fff}
+.right_list ul li .btn_jr:hover{background-color:#006ee4; text-decoration:none;}
+

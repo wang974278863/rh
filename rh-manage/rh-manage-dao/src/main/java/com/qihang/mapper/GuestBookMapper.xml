@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qihang.mapper.GuestBookMapper" >
+  <resultMap id="BaseResultMap" type="com.qihang.pojo.GuestBook" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="contact_way" property="contactWay" jdbcType="VARCHAR" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+    <result column="is_reply" property="isReply" jdbcType="BIT" />
+    <result column="reply" property="reply" jdbcType="VARCHAR" />
+    <result column="is_verify" property="isVerify" jdbcType="BIT" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="reply_date" property="replyDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, name, contact_way, content, is_reply, reply, is_verify, create_date, reply_date
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.qihang.pojo.GuestBookExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from guest_book
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from guest_book
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from guest_book
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.qihang.pojo.GuestBookExample" >
+    delete from guest_book
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.qihang.pojo.GuestBook" >
+    insert into guest_book (id, name, contact_way, 
+      content, is_reply, reply, 
+      is_verify, create_date, reply_date
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{contactWay,jdbcType=VARCHAR}, 
+      #{content,jdbcType=VARCHAR}, #{isReply,jdbcType=BIT}, #{reply,jdbcType=VARCHAR}, 
+      #{isVerify,jdbcType=BIT}, #{createDate,jdbcType=TIMESTAMP}, #{replyDate,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qihang.pojo.GuestBook" >
+    insert into guest_book
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="contactWay != null" >
+        contact_way,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+      <if test="isReply != null" >
+        is_reply,
+      </if>
+      <if test="reply != null" >
+        reply,
+      </if>
+      <if test="isVerify != null" >
+        is_verify,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="replyDate != null" >
+        reply_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="contactWay != null" >
+        #{contactWay,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="isReply != null" >
+        #{isReply,jdbcType=BIT},
+      </if>
+      <if test="reply != null" >
+        #{reply,jdbcType=VARCHAR},
+      </if>
+      <if test="isVerify != null" >
+        #{isVerify,jdbcType=BIT},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="replyDate != null" >
+        #{replyDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.qihang.pojo.GuestBookExample" resultType="java.lang.Integer" >
+    select count(*) from guest_book
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update guest_book
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contactWay != null" >
+        contact_way = #{record.contactWay,jdbcType=VARCHAR},
+      </if>
+      <if test="record.content != null" >
+        content = #{record.content,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isReply != null" >
+        is_reply = #{record.isReply,jdbcType=BIT},
+      </if>
+      <if test="record.reply != null" >
+        reply = #{record.reply,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isVerify != null" >
+        is_verify = #{record.isVerify,jdbcType=BIT},
+      </if>
+      <if test="record.createDate != null" >
+        create_date = #{record.createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.replyDate != null" >
+        reply_date = #{record.replyDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update guest_book
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      contact_way = #{record.contactWay,jdbcType=VARCHAR},
+      content = #{record.content,jdbcType=VARCHAR},
+      is_reply = #{record.isReply,jdbcType=BIT},
+      reply = #{record.reply,jdbcType=VARCHAR},
+      is_verify = #{record.isVerify,jdbcType=BIT},
+      create_date = #{record.createDate,jdbcType=TIMESTAMP},
+      reply_date = #{record.replyDate,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qihang.pojo.GuestBook" >
+    update guest_book
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="contactWay != null" >
+        contact_way = #{contactWay,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="isReply != null" >
+        is_reply = #{isReply,jdbcType=BIT},
+      </if>
+      <if test="reply != null" >
+        reply = #{reply,jdbcType=VARCHAR},
+      </if>
+      <if test="isVerify != null" >
+        is_verify = #{isVerify,jdbcType=BIT},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="replyDate != null" >
+        reply_date = #{replyDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qihang.pojo.GuestBook" >
+    update guest_book
+    set name = #{name,jdbcType=VARCHAR},
+      contact_way = #{contactWay,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      is_reply = #{isReply,jdbcType=BIT},
+      reply = #{reply,jdbcType=VARCHAR},
+      is_verify = #{isVerify,jdbcType=BIT},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      reply_date = #{replyDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

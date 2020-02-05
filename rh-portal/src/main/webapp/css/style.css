@@ -1,0 +1,58 @@
+
+
+
+/*首页主体部分*/
+.boxstyle{ background:#FFF;padding:15px 15px ;margin:10px 0px;}
+
+/*公告*/
+.gktit{border-bottom:1px solid #eeeeee; height:42px; position:relative;  }
+.gktit a.more{display:block; position:absolute;right:5px; top:10px; border:0;}
+.gktit h3{ font-size:20px; font-weight:500; display:inline-block; margin-top:10px;line-height:26px;border-left:3px solid #00a0e7; padding-left:12px; }
+.gktit .tab{width:180px; position: absolute;right:10px; top:6px;}
+.gktit .tab li{ margin:0; padding:0;float:left; display:block;}
+.gktit .tab li a{float:left; display:block; _display:inline; width:58px; height:30px; line-height:26px; text-align:center; font-size:14px; text-decoration:none}
+.gktit .tab li a.sel{background:url(../../images/tabsel.png) no-repeat; color:#FFF}
+
+
+
+.summary{width:200px;height:128px;top:95px;left:0;position:absolute;}
+.summarytxt{margin:5px 10px;width:200px;height:auto;line-height:22px;font-size:12px;}
+.summarytxt p a{color:#cfcfcf;}
+.summarytxt p a:link, .summarytxt p a:visited{color:#cfcfcf;}
+.listinfo{_margin-bottom:3px;padding-left:10px;width:200px;line-height:22px;font-size:12px;}
+.listinfo a{font-size:12px;}
+.listtitle{float:left;margin-top:8px;_margin-top:-2px;width:200px;font-size:14px;}
+.listtitle a{font-size:14px;}
+.listtitle a:hover{color:#f55555;}
+.listtag{float:left;padding-left:18px;background:url(../../images/taglist.gif) 0 5px no-repeat;width:200px;color:#999;}
+.listtag a{margin:0 8px 0 0;margin:2px 8px -2px 0\9;_margin:0 8px 0 0;color:#999;}
+.listtag a:hover{color:#2ad2bb;}
+.listdate{float:left;margin-right:13px;padding-left:18px;background:url(../../images/time.gif) 0 5px no-repeat;color:#999;}
+.listview{float:left;margin-right:13px;padding-left:24px;background:url(../../images/view.gif) 0 5px no-repeat;color:#999;}
+.listcomment{float:left;margin-right:13px;padding-left:20px;background:url(../../images/comment.gif) 0 5px no-repeat;color:#999;}
+.listdemo a{float:left;margin-top:0;margin-top:2px\9;_margin-top:0;color:#999;white-space:nowrap;}
+.listdemo a:hover{color:#2ad2bb;}
+
+/*课程体系*/
+
+.video1 li{ float:left; width:24%; _width:218px; height:200px; padding:5px; font-size:14px;border:0px solid transparent; margin:10px 5px; _margin:10px 2px; _display:inline; position:relative;}
+.video1 li i{ background:url(../../jy_images/kcico.png) no-repeat; width:43px; height:19px; position:absolute; right:5px; top:-1px; z-index:2}
+.video1 li i.mf{ background-position: 0 0}
+.video1 li i.zx{ background-position: -54px 0}
+.video1 li i.rm{ background-position:-106px 0}
+
+.video1 li:hover{  padding:5px;font-size:14px;margin:10px 5px; border:0px solid transparent; background:#FFF;}
+.video1 li a.pic{ width:130px; height:135px; border:1px solid #eee;display: block;border:1px solid #eee; overflow:hidden; z-index:1;}
+.video1 li img { width:220px; height:135px; -moz-transition: all 1s ease 0s;-o-transition: all 1s ease 0s;-webkit-transition: all 1s ease 0s;transition: all 1s ease 0s;}
+.video1 li a:hover img	{-webkit-transform: scale(1.2);-moz-transform: scale(1.2);-ms-transform: scale(1.2);-o-transform: scale(1.2);transform: scale(1.2);}
+
+.video1 h4{ font-size:14px; height:40px; line-height:40px; overflow:hidden}
+.video1 li p { color:#323433; width:130px;  height:24px; text-decoration:none;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;word-wrap: normal;}
+.video1 li p a:hover{ color:#62B4F7; text-decoration:none;}
+.video1 li span.yew { color:#ff5a00}
+
+/*.video1 a.kcgmbtn{ background:#39a4dc; color:#fff;font-size:12px; padding:3px 6px; float:right; margin-right:0px;}*/
+.video1 a.kcgmbtn{ background:#39a4dc; color:#fff;font-size:12px; padding:3px 6px; float:right; margin-right:0px;}
+.video1 a.kcgmbtn:visited{ color:#fff;}
+.video1 a.kcgmbtn:hover{ color:#fff; background:#0eb4ff;}
+

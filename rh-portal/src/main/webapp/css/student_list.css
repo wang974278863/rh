@@ -1,0 +1,44 @@
+
+#div1{ width:auto; height:100%;}
+
+	#cont{ width:1100px; height:auto; overflow:hidden; margin:0px auto; padding-top:10px; padding-bottom:10px;}
+		.left{ float:left; width:278px; height:auto; overflow:hidden;}
+			 .title{ float:left; width:278px; height:auto; overflow:hidden; line-height:24px;}
+			 .title a{ display:block; height:38px; background:url(../images/student/list_2.png) no-repeat left bottom; padding-left:10px; margin-bottom:6px;}
+			 .title a:hover{background:url(../images/student/list_2.png) no-repeat left top;}
+			 .title p{ clear:both; padding:0px 0px 20px 15px;}
+			 .title #this{background:url(../images/student/list_2.png) no-repeat left top;}
+			 .title #works{ display:inline; background:none; color:#333;}
+		
+		.right{ height:auto; overflow:hidden;}	 
+			 
+			 /*位置*/
+			.adr{ height:32px; padding-left:10px;}
+			.adr li{ float:left; line-height:32px; color:#333;}
+			.adr li a{ color:#333;}
+			.adr li a:hover{ color:#ff6600;}
+			 
+			 .listimg{ height:auto; overflow:hidden;}
+			 .listimg li{ float:left; width:187px; height:150px; padding-right:20px; padding-bottom:10px;}
+			 .listimg .pr0{ padding-right:0;}
+			 
+			 .listimg a{ display:block; height:140px; padding-top:6px; background:#f2f2f2; text-align:center; line-height:18px; }/*页码*/
+			 .listimg a img{ display:block; margin:0 auto;}
+			 .page{ height:32px; clear:both; text-align:center; line-height:43px; font-size:14px; margin-left:10px;}
+			 .page li{ float:left; padding:2px 4px;}
+			 
+			 /*服务*/
+			 .service{ float:right; width:258px; height:300px; padding:0px 10px 10px 10px; background:#ebebeb;}
+			 .service .stitle{ height:48px;}
+			 .service .listcont{ height:242px; padding:5px 0px 5px 0px; background:#fff;}
+			 .service li{ float:left; width:69px; height:83px; padding-left:11px;}
+			 .service li a{ display:block; width:67px; height:24px; padding-top:50px; text-align:center; line-height:24px;}
+				 .s1{ background:url(../images/student/cn1_4.png) no-repeat 0px -4px;}
+				 .s2{ background:url(../images/student/cn1_4.png) no-repeat 0px -233px;}
+				 .s3{ background:url(../images/student/cn1_4.png) no-repeat 0px -456px;}
+				 .s4{ background:url(../images/student/cn1_4.png) no-repeat 0px -79px;}
+				 .s5{ background:url(../images/student/cn1_4.png) no-repeat 0px -305px;}
+				 .s6{ background:url(../images/student/cn1_4.png) no-repeat 0px -529px;}
+				 .s7{ background:url(../images/student/cn1_4.png) no-repeat 0px -155px;}
+				 .s8{ background:url(../images/student/cn1_4.png) no-repeat 0px -380px;}
+				 .s9{ background:url(../images/student/cn1_4.png) no-repeat 0px -600px;}
