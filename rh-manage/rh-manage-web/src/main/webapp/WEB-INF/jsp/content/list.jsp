@@ -27,7 +27,7 @@
 					<th width="10%">标题</th>
 					<th width="10%">链接地址</th>
 					<th width="10%">图片</th>
-					<th width="10%">创建时间</th>
+					<th width="10%">更新时间</th>
 					<th width="10%">内容</th>
 					<th width="10%">操作</th>
 				</tr>
@@ -46,7 +46,7 @@
 									</c:if>
 								</td>
 								<td>
-									<fmt:formatDate value="${obj.createDate }" pattern="yyyy-MM-dd HH:mm:ss"/>
+									<fmt:formatDate value="${obj.updateDate }" pattern="yyyy-MM-dd HH:mm:ss"/>
 								</td>
 								<td> 
 									<c:if test="${!empty obj.content }">

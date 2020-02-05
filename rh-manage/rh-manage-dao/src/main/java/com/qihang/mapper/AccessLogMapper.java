@@ -10,13 +10,21 @@ public interface AccessLogMapper {
 
     int deleteByExample(AccessLogExample example);
 
+    int deleteByPrimaryKey(Integer id);
+
     int insert(AccessLog record);
 
     int insertSelective(AccessLog record);
 
     List<AccessLog> selectByExample(AccessLogExample example);
 
+    AccessLog selectByPrimaryKey(Integer id);
+
     int updateByExampleSelective(@Param("record") AccessLog record, @Param("example") AccessLogExample example);
 
     int updateByExample(@Param("record") AccessLog record, @Param("example") AccessLogExample example);
+
+    int updateByPrimaryKeySelective(AccessLog record);
+
+    int updateByPrimaryKey(AccessLog record);
 }

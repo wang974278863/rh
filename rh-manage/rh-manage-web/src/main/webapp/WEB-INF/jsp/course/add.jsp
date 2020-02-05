@@ -133,9 +133,9 @@ $(function(){
 		success:"valid",
 		submitHandler:function(form){
 			var id = $("input[name=id]").val();
-			var url = "/course/add";
+			var url = "${ctx}/course/add";
 			if(id){
-				url = "/course/update";
+				url = "${ctx}/course/update";
 			}
 			$.ajax({
 				url : url,

@@ -21,7 +21,7 @@ public class ContentController {
 	@RequestMapping("/list")
 	public String list(Model model,String code,Page page){
 		page.setUrl("/content/list");
-		page.setOrder("create_date desc");
+		page.setOrder("update_date desc");
 		page = contentService.findByPage(code, page);
 		model.addAttribute("page", page);
 		return "content/list";

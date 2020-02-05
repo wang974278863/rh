@@ -32,7 +32,7 @@
 				<div>
 					<div class="news_dateil_t"><h3>${obj.title }</h3></div>
 					<div class="news_dateil_m">
-						<div class="news_size">作者：admin 发布于：<fmt:formatDate value="${obj.createDate }" pattern="yyyy-MM-dd HH:mm:ss"/> 
+						<div class="news_size">作者：admin 发布于：<fmt:formatDate value="${obj.updateDate }" pattern="yyyy-MM-dd HH:mm:ss"/> 
 						</div>
 						<div class="news_p" id="description">
 							<p>${obj.content }</p>

@@ -38,7 +38,6 @@ public class CourseServiceImpl implements CourseService {
 			criteria.andTitleEqualTo(course.getTeacher());
 		}
 		page.setParameter(parameter);
-		criteria.andIsVerifyEqualTo(true);
 		List<Course> list = courseMapper.selectByExample(example);
 		page.setResult(list);
 		return page;

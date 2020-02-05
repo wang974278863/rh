@@ -13,9 +13,9 @@ public class Content {
 
     private String href;
 
-    private String content;
+    private Date updateDate;
 
-    private Date createDate;
+    private String content;
 
     public Integer getId() {
         return id;
@@ -57,19 +57,19 @@ public class Content {
         this.href = href == null ? null : href.trim();
     }
 
+    public Date getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(Date updateDate) {
+        this.updateDate = updateDate;
+    }
+
     public String getContent() {
         return content;
     }
 
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
-    }
-
-    public Date getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
     }
 }

@@ -31,7 +31,7 @@ public class CourseController {
 	public String list(Page page, Model model, Course course, HttpServletRequest request) {
 		page.setUrl(request.getContextPath() + "/course/list");
 //		page.setPageSize(2);
-		page.setOrder("create_date desc");
+		page.setOrder("update_date desc");
 		page = courseService.findByPage(page, course);
 		model.addAttribute("page", page);
 		return "course/list";
@@ -40,25 +40,6 @@ public class CourseController {
 	@RequestMapping("/toadd")
 	public String toadd() {
 		return "course/add";
-	}
-
-	@RequestMapping("/verify/{id}")
-	@ResponseBody
-	public RetInfo verify(@PathVariable Integer id, String type) {
-
-		Course courseDB = courseService.getById(id);
-		if (id == null) {
-			return new RetInfo(Constants.FAIL, "ID不能为空！");
-		}
-
-		if ("1".equals(type)) {
-			courseDB.setIsVerify(true);
-		} else {
-			courseDB.setIsVerify(false);
-		}
-		courseService.update(courseDB);
-		cacheService.clearCache("kcxy");
-		return new RetInfo(Constants.SUCCESS);
 	}
 
 	@RequestMapping("/toUpdate/{id}")

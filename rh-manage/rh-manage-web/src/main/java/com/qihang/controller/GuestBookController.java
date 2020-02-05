@@ -33,7 +33,7 @@ public class GuestBookController {
 	
 	@RequestMapping("/list")
 	public String list(Model model,GuestBook guestBook,Page page,HttpServletRequest request){
-		page.setUrl("/guestBook/list");
+		page.setUrl(request.getContextPath() +"/guestBook/list");
 		page = guestBookService.findByPage(page, guestBook);
 		model.addAttribute("page", page);
 		return "guestBook/list";

@@ -31,7 +31,7 @@
 							<c:forEach items="${zyghzd }" var="obj">
 								<dd>
 									<span>
-										<fmt:formatDate value="${obj.createDate }" pattern="yyyy-MM-dd"/>
+										<fmt:formatDate value="${obj.updateDate }" pattern="yyyy-MM-dd"/>
 									</span>
 									<a href="/zszx/view/${obj.id }" target="_blank" title="${obj.title }">
 										${obj.title }
@@ -58,7 +58,7 @@
 							<c:forEach items="${qyzp }" var="obj">
 								<dd>
 									<span>
-										<fmt:formatDate value="${obj.createDate }" pattern="yyyy-MM-dd"/>
+										<fmt:formatDate value="${obj.updateDate }" pattern="yyyy-MM-dd"/>
 									</span>
 									<a href="/zszx/view/${obj.id }" target="_blank" title="${obj.title }">
 										${obj.title }
@@ -110,7 +110,7 @@
 							<c:forEach items="${cgal }" var="obj">
 								<dd>
 									<span>
-										<fmt:formatDate value="${obj.createDate }" pattern="yyyy-MM-dd"/>
+										<fmt:formatDate value="${obj.updateDate }" pattern="yyyy-MM-dd"/>
 									</span>
 									<a href="/zszx/view/${obj.id }" target="_blank" title="${obj.title }">
 										${obj.title }

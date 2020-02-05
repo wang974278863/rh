@@ -26,8 +26,7 @@ public class CourseServiceImpl implements CourseService {
 	
 	@Override
 	public int insert(Course course) {
-		course.setCreateDate(new Date());
-		course.setIsVerify(false);
+		course.setUpdateDate(new Date());
 		return courseMapper.insertSelective(course);
 	}
 
@@ -58,6 +57,7 @@ public class CourseServiceImpl implements CourseService {
 
 	@Override
 	public int update(Course course) {
+		course.setUpdateDate(new Date());
 		return courseMapper.updateByPrimaryKeyWithBLOBs(course);
 	}
 

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.qihang.mapper.AccessLogMapper" >
   <resultMap id="BaseResultMap" type="com.qihang.pojo.AccessLog" >
-    <result column="id" property="id" jdbcType="INTEGER" />
+    <id column="id" property="id" jdbcType="INTEGER" />
     <result column="sessionId" property="sessionid" jdbcType="VARCHAR" />
     <result column="ip" property="ip" jdbcType="VARCHAR" />
     <result column="access_time" property="accessTime" jdbcType="TIMESTAMP" />
@@ -82,6 +82,16 @@
       order by ${orderByClause}
     </if>
   </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from access_log
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from access_log
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
   <delete id="deleteByExample" parameterType="com.qihang.pojo.AccessLogExample" >
     delete from access_log
     <if test="_parameter != null" >
@@ -160,5 +170,27 @@
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qihang.pojo.AccessLog" >
+    update access_log
+    <set >
+      <if test="sessionid != null" >
+        sessionId = #{sessionid,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null" >
+        ip = #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="accessTime != null" >
+        access_time = #{accessTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qihang.pojo.AccessLog" >
+    update access_log
+    set sessionId = #{sessionid,jdbcType=VARCHAR},
+      ip = #{ip,jdbcType=VARCHAR},
+      access_time = #{accessTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

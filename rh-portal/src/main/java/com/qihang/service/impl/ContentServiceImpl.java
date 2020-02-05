@@ -32,7 +32,7 @@ public class ContentServiceImpl implements com.qihang.service.ContentService {
 	public List<Content> findByCode(String code) {
 		ContentExample example = new ContentExample();
 		example.createCriteria().andCategoryCodeEqualTo(code);
-		return contentMapper.selectByExampleWithBolbs(example);
+		return contentMapper.selectByExampleWithBLOBs(example);
 	}
 
 	@Override
@@ -56,7 +56,7 @@ public class ContentServiceImpl implements com.qihang.service.ContentService {
 	
 	@Override
 	public List<Content> findTop(int top, String code) {
-		PageHelper.startPage(1, top,"create_date desc");
+		PageHelper.startPage(1, top,"update_date desc");
 		ContentExample example  = new ContentExample();
 		example.createCriteria().andCategoryCodeEqualTo(code);
 		List<Content> list = contentMapper.selectByExample(example);

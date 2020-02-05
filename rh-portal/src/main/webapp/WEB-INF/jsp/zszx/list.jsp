@@ -27,7 +27,7 @@
 			<div class="model-details">
 				<c:forEach items="${page.result }" var="obj">
 					<div class="news-model">
-						<a href="/zszx/view/${obj.id }"><b>${obj.title }</b></a><span>【<fmt:formatDate value="${obj.createDate }" pattern="yyyy-MM-dd"/> 】</span>
+						<a href="/zszx/view/${obj.id }"><b>${obj.title }</b></a><span>【<fmt:formatDate value="${obj.updateDate }" pattern="yyyy-MM-dd"/> 】</span>
 						<p>
 <!-- 						由常州市人民政府主办，新纶科技股份有限公司（以下简称“新纶科技”）、深圳市启赋资本管理有限公司（以下简称“启赋资本”）协办的“2016常州新材料产融高峰论坛暨启赋新纶新材料并购基金启动仪式”于12月9日在常州... -->
 						</p>

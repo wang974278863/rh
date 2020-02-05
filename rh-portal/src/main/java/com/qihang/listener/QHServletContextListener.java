@@ -85,7 +85,7 @@ public class QHServletContextListener implements ServletContextListener{
 		Page page = new Page();
 		page.setCurrentPage(1);
 		page.setPageSize(8);
-		page.setOrder("create_date desc");
+		page.setOrder("update_date desc");
 		page = courseService.findByPage(page, new Course());
 		servletContext.setAttribute("kcxy", page.getResult());
 		System.out.println("*********************课程学习加载成功！");

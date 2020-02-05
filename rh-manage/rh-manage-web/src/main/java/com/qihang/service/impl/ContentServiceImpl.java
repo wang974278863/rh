@@ -22,7 +22,7 @@ public class ContentServiceImpl implements com.qihang.service.ContentService {
 	
 	@Override
 	public int insert(Content content) {
-		content.setCreateDate(new Date());
+		content.setUpdateDate(new Date());
 		int i = contentMapper.insertSelective(content);
 		return i;
 	}
@@ -49,6 +49,7 @@ public class ContentServiceImpl implements com.qihang.service.ContentService {
 	 */
 	@Override
 	public int update(Content content) {
+		content.setUpdateDate(new Date());
 		return contentMapper.updateByPrimaryKey(content);
 	}
 

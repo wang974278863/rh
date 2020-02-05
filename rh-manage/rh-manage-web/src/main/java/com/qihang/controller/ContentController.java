@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.qihang.common.pojo.Constants;
 import com.qihang.common.pojo.Page;
@@ -15,6 +14,8 @@ import com.qihang.common.pojo.RetInfo;
 import com.qihang.pojo.Content;
 import com.qihang.service.CacheService;
 import com.qihang.service.ContentService;
+
+import javax.servlet.http.HttpServletRequest;
 
 
 @RequestMapping("/content")
@@ -91,9 +92,9 @@ public class ContentController {
 	
 	
 	@RequestMapping("/list/{code}")
-	public String list(@PathVariable String code,Model model,Page page){
-		page.setUrl("/content/list/" + code);
-		page.setOrder("create_date desc");
+	public String list(@PathVariable String code, Model model, Page page, HttpServletRequest request){
+		page.setUrl(request.getContextPath() + "/content/list/" + code);
+		page.setOrder("update_date desc");
 		page = contentService.findByPage(code, page);
 		model.addAttribute("page", page);
 		return "content/list";

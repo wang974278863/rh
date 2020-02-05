@@ -29,7 +29,6 @@
 					<th width="10%">讲师</th>
 					<th width="20%">缩略图</th>
 					<th width="10%">创建时间</th>
-					<th width="5%">是否审核</th>
 					<th width="15%">操作</th>
 				</tr>
 			</thead>
@@ -52,23 +51,9 @@
 										<img alt="" src="${obj.pic }" width="250px" height="200px">
 									</a>
 								</td>
-								<td><fmt:formatDate value="${obj.createDate }" pattern="yyyy-MM-dd HH:mm:ss"/></td>
-								<td>
-									<c:if test="${obj.isVerify }">
-										<span class="label label-success radius">审核通过</span>
-									</c:if>
-									<c:if test="${!obj.isVerify }">
-										<span class="label label-fail radius">未审核</span>
-									</c:if>
-								</td>
+								<td><fmt:formatDate value="${obj.updateDate }" pattern="yyyy-MM-dd HH:mm:ss"/></td>
 								<td class="f-14 td-manage">
-								<c:if test="${obj.isVerify }">
-									<a style="text-decoration:none" onClick="verify('${obj.id}','2')" href="javascript:;" title="审核不通过">审核不通过</a> 
-								</c:if>
-								<c:if test="${!obj.isVerify }">
-									<a style="text-decoration:none" onClick="verify('${obj.id}','1')" href="javascript:;" title="审核通过">审核通过</a> 
-								</c:if>
-								<a style="text-decoration:none" class="ml-5" onclick="content_add('课程编辑','/course/toUpdate/${obj.id }')" href="javascript:;" title="编辑"><i class="Hui-iconfont"></i></a>
+								<a style="text-decoration:none" class="ml-5" onclick="content_add('课程编辑','${ctx}/course/toUpdate/${obj.id }')" href="javascript:;" title="编辑"><i class="Hui-iconfont"></i></a>
 								<a style="text-decoration:none" class="ml-5" onClick="article_del(this,'${obj.id}')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a>
 								</td>
 							</tr>

@@ -6,6 +6,8 @@ import java.util.Map.Entry;
 
 import org.apache.commons.lang3.StringUtils;
 
+import javax.servlet.http.HttpServletRequest;
+
 public class Page {
 
 	private String url;
@@ -148,7 +150,7 @@ public class Page {
 
 	private String href(int pageNo){
 		StringBuffer sb = new StringBuffer();
-		sb.append("/manage"+url + "?currentPage=" + pageNo);
+		sb.append(url + "?currentPage=" + pageNo);
 		if(!StringUtils.isBlank(order)){
 			sb.append("&order=" + order);
 		}

@@ -62,7 +62,7 @@ public class CacheController {
 			Page page = new Page();
 			page.setCurrentPage(1);
 			page.setPageSize(8);
-			page.setOrder("create_date desc");
+			page.setOrder("update_date desc");
 			page = courseService.findByPage(page, new Course());
 			session.getServletContext().setAttribute("kcxy", page.getResult());
 			System.out.println("*********************学员风采加载成功！" + JsonUtils.objectToJson(page.getResult()));

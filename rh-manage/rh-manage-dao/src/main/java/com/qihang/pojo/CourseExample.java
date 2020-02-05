@@ -585,123 +585,63 @@ public class CourseExample {
             return (Criteria) this;
         }
 
-        public Criteria andIsVerifyIsNull() {
-            addCriterion("is_verify is null");
+        public Criteria andUpdateDateIsNull() {
+            addCriterion("update_date is null");
             return (Criteria) this;
         }
 
-        public Criteria andIsVerifyIsNotNull() {
-            addCriterion("is_verify is not null");
+        public Criteria andUpdateDateIsNotNull() {
+            addCriterion("update_date is not null");
             return (Criteria) this;
         }
 
-        public Criteria andIsVerifyEqualTo(Boolean value) {
-            addCriterion("is_verify =", value, "isVerify");
+        public Criteria andUpdateDateEqualTo(Date value) {
+            addCriterion("update_date =", value, "updateDate");
             return (Criteria) this;
         }
 
-        public Criteria andIsVerifyNotEqualTo(Boolean value) {
-            addCriterion("is_verify <>", value, "isVerify");
+        public Criteria andUpdateDateNotEqualTo(Date value) {
+            addCriterion("update_date <>", value, "updateDate");
             return (Criteria) this;
         }
 
-        public Criteria andIsVerifyGreaterThan(Boolean value) {
-            addCriterion("is_verify >", value, "isVerify");
+        public Criteria andUpdateDateGreaterThan(Date value) {
+            addCriterion("update_date >", value, "updateDate");
             return (Criteria) this;
         }
 
-        public Criteria andIsVerifyGreaterThanOrEqualTo(Boolean value) {
-            addCriterion("is_verify >=", value, "isVerify");
+        public Criteria andUpdateDateGreaterThanOrEqualTo(Date value) {
+            addCriterion("update_date >=", value, "updateDate");
             return (Criteria) this;
         }
 
-        public Criteria andIsVerifyLessThan(Boolean value) {
-            addCriterion("is_verify <", value, "isVerify");
+        public Criteria andUpdateDateLessThan(Date value) {
+            addCriterion("update_date <", value, "updateDate");
             return (Criteria) this;
         }
 
-        public Criteria andIsVerifyLessThanOrEqualTo(Boolean value) {
-            addCriterion("is_verify <=", value, "isVerify");
+        public Criteria andUpdateDateLessThanOrEqualTo(Date value) {
+            addCriterion("update_date <=", value, "updateDate");
             return (Criteria) this;
         }
 
-        public Criteria andIsVerifyIn(List<Boolean> values) {
-            addCriterion("is_verify in", values, "isVerify");
+        public Criteria andUpdateDateIn(List<Date> values) {
+            addCriterion("update_date in", values, "updateDate");
             return (Criteria) this;
         }
 
-        public Criteria andIsVerifyNotIn(List<Boolean> values) {
-            addCriterion("is_verify not in", values, "isVerify");
+        public Criteria andUpdateDateNotIn(List<Date> values) {
+            addCriterion("update_date not in", values, "updateDate");
             return (Criteria) this;
         }
 
-        public Criteria andIsVerifyBetween(Boolean value1, Boolean value2) {
-            addCriterion("is_verify between", value1, value2, "isVerify");
+        public Criteria andUpdateDateBetween(Date value1, Date value2) {
+            addCriterion("update_date between", value1, value2, "updateDate");
             return (Criteria) this;
         }
 
-        public Criteria andIsVerifyNotBetween(Boolean value1, Boolean value2) {
-            addCriterion("is_verify not between", value1, value2, "isVerify");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateDateIsNull() {
-            addCriterion("create_date is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateDateIsNotNull() {
-            addCriterion("create_date is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateDateEqualTo(Date value) {
-            addCriterion("create_date =", value, "createDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateDateNotEqualTo(Date value) {
-            addCriterion("create_date <>", value, "createDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateDateGreaterThan(Date value) {
-            addCriterion("create_date >", value, "createDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateDateGreaterThanOrEqualTo(Date value) {
-            addCriterion("create_date >=", value, "createDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateDateLessThan(Date value) {
-            addCriterion("create_date <", value, "createDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateDateLessThanOrEqualTo(Date value) {
-            addCriterion("create_date <=", value, "createDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateDateIn(List<Date> values) {
-            addCriterion("create_date in", values, "createDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateDateNotIn(List<Date> values) {
-            addCriterion("create_date not in", values, "createDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateDateBetween(Date value1, Date value2) {
-            addCriterion("create_date between", value1, value2, "createDate");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateDateNotBetween(Date value1, Date value2) {
-            addCriterion("create_date not between", value1, value2, "createDate");
+        public Criteria andUpdateDateNotBetween(Date value1, Date value2) {
+            addCriterion("update_date not between", value1, value2, "updateDate");
             return (Criteria) this;
         }
     }

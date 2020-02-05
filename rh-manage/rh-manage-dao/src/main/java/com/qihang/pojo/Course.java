@@ -17,9 +17,7 @@ public class Course {
 
     private String videoIntroduction;
 
-    private Boolean isVerify;
-
-    private Date createDate;
+    private Date updateDate;
 
     private String content;
 
@@ -79,20 +77,12 @@ public class Course {
         this.videoIntroduction = videoIntroduction == null ? null : videoIntroduction.trim();
     }
 
-    public Boolean getIsVerify() {
-        return isVerify;
+    public Date getUpdateDate() {
+        return updateDate;
     }
 
-    public void setIsVerify(Boolean isVerify) {
-        this.isVerify = isVerify;
-    }
-
-    public Date getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
+    public void setUpdateDate(Date updateDate) {
+        this.updateDate = updateDate;
     }
 
     public String getContent() {

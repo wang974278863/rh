@@ -7,8 +7,10 @@
     <result column="title" property="title" jdbcType="VARCHAR" />
     <result column="pic" property="pic" jdbcType="VARCHAR" />
     <result column="href" property="href" jdbcType="VARCHAR" />
-    <result column="content" property="content" jdbcType="VARCHAR" />
-    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.qihang.pojo.Content" extends="BaseResultMap" >
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -69,8 +71,27 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, category_code, title, pic, href, create_date
+    id, category_code, title, pic, href, update_date
   </sql>
+  <sql id="Blob_Column_List" >
+    content
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.qihang.pojo.ContentExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from content
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.qihang.pojo.ContentExample" >
     select
     <if test="distinct" >
@@ -85,23 +106,11 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByExampleWithBolbs" resultMap="BaseResultMap" parameterType="com.qihang.pojo.ContentExample" >
-    select
-    <if test="distinct" >
-      distinct
-    </if>
-    <include refid="Base_Column_List" />,content
-    from content
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null" >
-      order by ${orderByClause}
-    </if>
-  </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
     select 
-    <include refid="Base_Column_List" />,content
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
     from content
     where id = #{id,jdbcType=INTEGER}
   </select>
@@ -117,11 +126,11 @@
   </delete>
   <insert id="insert" parameterType="com.qihang.pojo.Content" >
     insert into content (id, category_code, title, 
-      pic, href, content, 
-      create_date)
+      pic, href, update_date, 
+      content)
     values (#{id,jdbcType=INTEGER}, #{categoryCode,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
-      #{pic,jdbcType=VARCHAR}, #{href,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
-      #{createDate,jdbcType=TIMESTAMP})
+      #{pic,jdbcType=VARCHAR}, #{href,jdbcType=VARCHAR}, #{updateDate,jdbcType=TIMESTAMP}, 
+      #{content,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.qihang.pojo.Content" >
     insert into content
@@ -141,11 +150,11 @@
       <if test="href != null" >
         href,
       </if>
+      <if test="updateDate != null" >
+        update_date,
+      </if>
       <if test="content != null" >
         content,
-      </if>
-      <if test="createDate != null" >
-        create_date,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -164,11 +173,11 @@
       <if test="href != null" >
         #{href,jdbcType=VARCHAR},
       </if>
-      <if test="content != null" >
-        #{content,jdbcType=VARCHAR},
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=TIMESTAMP},
       </if>
-      <if test="createDate != null" >
-        #{createDate,jdbcType=TIMESTAMP},
+      <if test="content != null" >
+        #{content,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
@@ -196,13 +205,26 @@
       <if test="record.href != null" >
         href = #{record.href,jdbcType=VARCHAR},
       </if>
-      <if test="record.content != null" >
-        content = #{record.content,jdbcType=VARCHAR},
+      <if test="record.updateDate != null" >
+        update_date = #{record.updateDate,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.createDate != null" >
-        create_date = #{record.createDate,jdbcType=TIMESTAMP},
+      <if test="record.content != null" >
+        content = #{record.content,jdbcType=LONGVARCHAR},
       </if>
     </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update content
+    set id = #{record.id,jdbcType=INTEGER},
+      category_code = #{record.categoryCode,jdbcType=VARCHAR},
+      title = #{record.title,jdbcType=VARCHAR},
+      pic = #{record.pic,jdbcType=VARCHAR},
+      href = #{record.href,jdbcType=VARCHAR},
+      update_date = #{record.updateDate,jdbcType=TIMESTAMP},
+      content = #{record.content,jdbcType=LONGVARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -214,8 +236,7 @@
       title = #{record.title,jdbcType=VARCHAR},
       pic = #{record.pic,jdbcType=VARCHAR},
       href = #{record.href,jdbcType=VARCHAR},
-      content = #{record.content,jdbcType=VARCHAR},
-      create_date = #{record.createDate,jdbcType=TIMESTAMP}
+      update_date = #{record.updateDate,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -235,13 +256,23 @@
       <if test="href != null" >
         href = #{href,jdbcType=VARCHAR},
       </if>
-      <if test="content != null" >
-        content = #{content,jdbcType=VARCHAR},
+      <if test="updateDate != null" >
+        update_date = #{updateDate,jdbcType=TIMESTAMP},
       </if>
-      <if test="createDate != null" >
-        create_date = #{createDate,jdbcType=TIMESTAMP},
+      <if test="content != null" >
+        content = #{content,jdbcType=LONGVARCHAR},
       </if>
     </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.qihang.pojo.Content" >
+    update content
+    set category_code = #{categoryCode,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      pic = #{pic,jdbcType=VARCHAR},
+      href = #{href,jdbcType=VARCHAR},
+      update_date = #{updateDate,jdbcType=TIMESTAMP},
+      content = #{content,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qihang.pojo.Content" >
@@ -250,8 +281,7 @@
       title = #{title,jdbcType=VARCHAR},
       pic = #{pic,jdbcType=VARCHAR},
       href = #{href,jdbcType=VARCHAR},
-      content = #{content,jdbcType=VARCHAR},
-      create_date = #{createDate,jdbcType=TIMESTAMP}
+      update_date = #{updateDate,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

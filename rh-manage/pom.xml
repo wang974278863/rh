@@ -12,7 +12,6 @@
     <artifactId>rh-manage</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>rh-manage-pojo</module>
         <module>rh-manage-web</module>
         <module>rh-manage-dao</module>
     </modules>

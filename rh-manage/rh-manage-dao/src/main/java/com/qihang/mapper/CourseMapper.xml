@@ -9,8 +9,7 @@
     <result column="pic" property="pic" jdbcType="VARCHAR" />
     <result column="video_url" property="videoUrl" jdbcType="VARCHAR" />
     <result column="video_introduction" property="videoIntroduction" jdbcType="VARCHAR" />
-    <result column="is_verify" property="isVerify" jdbcType="BIT" />
-    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.qihang.pojo.Course" extends="BaseResultMap" >
     <result column="content" property="content" jdbcType="LONGVARCHAR" />
@@ -74,7 +73,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, title, type, teacher, pic, video_url, video_introduction, is_verify, create_date
+    id, title, type, teacher, pic, video_url, video_introduction, update_date
   </sql>
   <sql id="Blob_Column_List" >
     content
@@ -97,7 +96,9 @@
   </select>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.qihang.pojo.CourseExample" >
     select
-    id, title, type, teacher, pic, video_url, is_verify, create_date
+    <if test="distinct" >
+      distinct
+    </if>
     <include refid="Base_Column_List" />
     from course
     <if test="_parameter != null" >
@@ -128,12 +129,12 @@
   <insert id="insert" parameterType="com.qihang.pojo.Course" >
     insert into course (id, title, type, 
       teacher, pic, video_url, 
-      video_introduction, is_verify, create_date, 
-      content)
+      video_introduction, update_date, content
+      )
     values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
       #{teacher,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, #{videoUrl,jdbcType=VARCHAR}, 
-      #{videoIntroduction,jdbcType=VARCHAR}, #{isVerify,jdbcType=BIT}, #{createDate,jdbcType=TIMESTAMP}, 
-      #{content,jdbcType=LONGVARCHAR})
+      #{videoIntroduction,jdbcType=VARCHAR}, #{updateDate,jdbcType=TIMESTAMP}, #{content,jdbcType=LONGVARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.qihang.pojo.Course" >
     insert into course
@@ -159,11 +160,8 @@
       <if test="videoIntroduction != null" >
         video_introduction,
       </if>
-      <if test="isVerify != null" >
-        is_verify,
-      </if>
-      <if test="createDate != null" >
-        create_date,
+      <if test="updateDate != null" >
+        update_date,
       </if>
       <if test="content != null" >
         content,
@@ -191,11 +189,8 @@
       <if test="videoIntroduction != null" >
         #{videoIntroduction,jdbcType=VARCHAR},
       </if>
-      <if test="isVerify != null" >
-        #{isVerify,jdbcType=BIT},
-      </if>
-      <if test="createDate != null" >
-        #{createDate,jdbcType=TIMESTAMP},
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=TIMESTAMP},
       </if>
       <if test="content != null" >
         #{content,jdbcType=LONGVARCHAR},
@@ -232,11 +227,8 @@
       <if test="record.videoIntroduction != null" >
         video_introduction = #{record.videoIntroduction,jdbcType=VARCHAR},
       </if>
-      <if test="record.isVerify != null" >
-        is_verify = #{record.isVerify,jdbcType=BIT},
-      </if>
-      <if test="record.createDate != null" >
-        create_date = #{record.createDate,jdbcType=TIMESTAMP},
+      <if test="record.updateDate != null" >
+        update_date = #{record.updateDate,jdbcType=TIMESTAMP},
       </if>
       <if test="record.content != null" >
         content = #{record.content,jdbcType=LONGVARCHAR},
@@ -255,8 +247,7 @@
       pic = #{record.pic,jdbcType=VARCHAR},
       video_url = #{record.videoUrl,jdbcType=VARCHAR},
       video_introduction = #{record.videoIntroduction,jdbcType=VARCHAR},
-      is_verify = #{record.isVerify,jdbcType=BIT},
-      create_date = #{record.createDate,jdbcType=TIMESTAMP},
+      update_date = #{record.updateDate,jdbcType=TIMESTAMP},
       content = #{record.content,jdbcType=LONGVARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -271,8 +262,7 @@
       pic = #{record.pic,jdbcType=VARCHAR},
       video_url = #{record.videoUrl,jdbcType=VARCHAR},
       video_introduction = #{record.videoIntroduction,jdbcType=VARCHAR},
-      is_verify = #{record.isVerify,jdbcType=BIT},
-      create_date = #{record.createDate,jdbcType=TIMESTAMP}
+      update_date = #{record.updateDate,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -298,11 +288,8 @@
       <if test="videoIntroduction != null" >
         video_introduction = #{videoIntroduction,jdbcType=VARCHAR},
       </if>
-      <if test="isVerify != null" >
-        is_verify = #{isVerify,jdbcType=BIT},
-      </if>
-      <if test="createDate != null" >
-        create_date = #{createDate,jdbcType=TIMESTAMP},
+      <if test="updateDate != null" >
+        update_date = #{updateDate,jdbcType=TIMESTAMP},
       </if>
       <if test="content != null" >
         content = #{content,jdbcType=LONGVARCHAR},
@@ -318,8 +305,7 @@
       pic = #{pic,jdbcType=VARCHAR},
       video_url = #{videoUrl,jdbcType=VARCHAR},
       video_introduction = #{videoIntroduction,jdbcType=VARCHAR},
-      is_verify = #{isVerify,jdbcType=BIT},
-      create_date = #{createDate,jdbcType=TIMESTAMP},
+      update_date = #{updateDate,jdbcType=TIMESTAMP},
       content = #{content,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -331,8 +317,7 @@
       pic = #{pic,jdbcType=VARCHAR},
       video_url = #{videoUrl,jdbcType=VARCHAR},
       video_introduction = #{videoIntroduction,jdbcType=VARCHAR},
-      is_verify = #{isVerify,jdbcType=BIT},
-      create_date = #{createDate,jdbcType=TIMESTAMP}
+      update_date = #{updateDate,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

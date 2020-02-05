@@ -111,7 +111,9 @@
                 <div class="line2 theme"></div>
             </div>
             <div>
-                <img class="img-responsive" src="${gsjj[0].pic }">
+                <c:if test="${gsjj[0].pic ne null}">
+                    <img class="img-responsive" src="${gsjj[0].pic }">
+                </c:if>
                 <p class="text1">
                     ${gsjj[0].content }
                 </p>
@@ -180,7 +182,9 @@
 			<span class="part1">
 				<a href="#">培训科目</a>
 			</span>
-            <button type="button" class="btn btn-default btn-xs more-btn" onclick="window.location.href='${ctx}/course/list'">+&nbsp;MORE</button>
+            <button type="button" class="btn btn-default btn-xs more-btn"
+                    onclick="window.location.href='${ctx}/course/list'">+&nbsp;MORE
+            </button>
             <span class="part1 en">
 				&nbsp;&nbsp;/ Course
 			</span>
@@ -191,12 +195,14 @@
                 <ul class="video1 ">
                     <c:forEach items="${kcxy }" var="obj">
                         <li>
-                            <a href="/course/${obj.id }" target="_blank" class="pic"><img src="${obj.pic }" title=""></a>
+                            <a href="/course/${obj.id }" target="_blank" class="pic"><img src="${obj.pic }"
+                                                                                          title=""></a>
                             <h4>
                                 <a href="/course/${obj.id }" target="_blank" title="${obj.title }">${obj.title }</a>
                             </h4>
                             <p>
-                                <a href="/course/${obj.id }" class="kcgmbtn" target="_blank">立即进入</a> 讲师：<span class="yew" title=""> <a >${obj.teacher }</a></span>
+                                <a href="/course/${obj.id }" class="kcgmbtn" target="_blank">立即进入</a> 讲师：<span
+                                    class="yew" title=""> <a>${obj.teacher }</a></span>
                             </p>
                         </li>
                     </c:forEach>
@@ -244,12 +250,14 @@
         <!-- 公司新闻 -->
         <div class="col-md-7">
 			<span class="part1">
-				<a href="#" >留言板</a>
+				<a href="#">留言板</a>
 			</span>
             <span class="part1 en">
 				&nbsp;&nbsp;/ GuestBook
 			</span>
-            <button type="button" class="btn btn-default btn-xs more-btn" onclick="window.location.href='/guestBook/list'">+MORE</button>
+            <button type="button" class="btn btn-default btn-xs more-btn"
+                    onclick="window.location.href='/guestBook/list'">+MORE
+            </button>
             <div class="line1">
                 <div class="line2 theme"></div>
             </div>
@@ -271,8 +279,11 @@
             </ul>
 
             <div style="margin-top: 20px">
-                <a onclick="goGuestBook();" style="background: #39a4dc;color: #fff;font-size: 18px;padding: 3px 6px;margin-left: 40%;">我要留言</a>
-                <a href="/guestBook/list" style="background: #39a4dc;color: #fff;font-size: 18px;padding: 3px 6px;float: right;" target="_blank">查看更多留言</a>
+                <a onclick="goGuestBook();"
+                   style="background: #39a4dc;color: #fff;font-size: 18px;padding: 3px 6px;margin-left: 40%;">我要留言</a>
+                <a href="/guestBook/list"
+                   style="background: #39a4dc;color: #fff;font-size: 18px;padding: 3px 6px;float: right;"
+                   target="_blank">查看更多留言</a>
             </div>
         </div>
 
@@ -289,7 +300,9 @@
                 <div class="line2 theme"></div>
             </div>
             <div>
-                <img class="img-responsive" src="/images/cn1_2.png" alt="校长寄语">
+                <c:if test="${xzjy[0].pic ne null}">
+                    <img class="img-responsive" src="${xzjy[0].pic }" alt="校长寄语">
+                </c:if>
                 <p class="text1">
                     ${xzjy[0].content }
                 </p>
