@@ -50,7 +50,7 @@ public class ContentServiceImpl implements com.qihang.service.ContentService {
 	@Override
 	public int update(Content content) {
 		content.setUpdateDate(new Date());
-		return contentMapper.updateByPrimaryKey(content);
+		return contentMapper.updateByPrimaryKeyWithBLOBs(content);
 	}
 
 	@Override
