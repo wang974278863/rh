@@ -1,8 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
-
-<!--_meta 作为公共模版分离出去-->
+<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -18,25 +14,12 @@
 				<input type="text" class="input-text" placeholder="标题"  name="title" value="${course.title }">
 			</div>
 		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">课程类型：</label>
-				<div class="radio-box">
-					<input name="type" value="1" type="radio" onclick="changeFormType('1');" checked="checked"><label for="sex-1">视频</label>&nbsp;&nbsp;&nbsp;
-					<input name="type" value="2" type="radio" onclick="changeFormType('2');"><label for="sex-1">文字</label>
-				</div>
-			</div>
 		<div class="row cl" lang="1">
 			<label class="form-label col-xs-4 col-sm-2">讲师：</label>
 			<div class="formControls col-xs-8 col-sm-9">
 				<input type="text" class="input-text" placeholder="讲师姓名，如：栾老师"  name="teacher" value="${course.teacher }">
 			</div>
 		</div>
-			<div class="row cl"  lang="1">
-				<label class="form-label col-xs-4 col-sm-2">视频地址：</label>
-				<div class="formControls col-xs-8 col-sm-9">
-					<input type="text" class="input-text" placeholder="优酷等网站的视频分享地址"  name="videoUrl" value="${course.videoUrl }">
-				</div>
-			</div>
  		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">缩略图：</label>
 			<div class="formControls col-xs-8 col-sm-9">
@@ -60,16 +43,10 @@
 			</div>
 
 		</div>
-		<div class="row cl" lang="2" style="display: none;">
+		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"> 内容：</label>
 			<div class="formControls col-xs-8 col-sm-9">
 				<script id="content" name="content" type="text/plain" style="width:100%;height:400px;">${course.content }</script> 
-			</div>
-		</div>
-		<div class="row cl"  lang="1" style="display: none;">
-			<label class="form-label col-xs-4 col-sm-2"> 视频简介：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<script id="videoIntroduction" name="videoIntroduction" type="text/plain" style="width:100%;height:400px;">${course.videoIntroduction }</script> 
 			</div>
 		</div>
 		<div class="row cl">
@@ -100,24 +77,8 @@
 <!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript">
 $(function(){
-	var ue = UE.getEditor('content');
-	var ue2 = UE.getEditor('videoIntroduction');
-	QH.onePicUpload("pic");
-	 var type = '${course.type}';
-	 if(type != ''){
-		 $(":radio[name='type'][value='" + type +"']").prop("checked", "checked");	
-		 var type2 = "1";
-		 if(type == "1"){
-			 type2 = "2";
-		 }
-		 $(":radio[name='type'][value='" + type2 +"']").prop("disabled","disabled");	
-		 changeFormType(type);
-		 
-	 }else{
-		$(":radio[name='type'][value='1']").prop("checked", "checked");
-		changeFormType('1');
-	 }
-	
+    UE.getEditor('content');
+    QH.onePicUpload("pic");
 	//表单验证
 	$("#course-add").validate({
 		rules:{
@@ -153,20 +114,6 @@ $(function(){
 		}
 	});
 });
-function removeIframe(){
-	var index = parent.layer.getFrameIndex(window.name);
-	parent.layer.close(index);
-}
-
-function changeFormType(type){
-	if(type == '1'){
-		$("div[lang='1']").show();
-		$("div[lang='2']").hide();
-	}else{
-		$("div[lang='2']").show();
-		$("div[lang='1']").hide();
-	}
-}
 </script>
 
 <!--/请在上方写此页面业务相关的脚本-->

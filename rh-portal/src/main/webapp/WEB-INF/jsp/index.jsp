@@ -27,7 +27,7 @@
         }
 
         .life .listimg {
-            float: right;
+            float: left;
             height: auto;
             overflow: hidden;
         }
@@ -201,7 +201,7 @@
                                 <a href="/course/${obj.id }" target="_blank" title="${obj.title }">${obj.title }</a>
                             </h4>
                             <p>
-                                <a href="/course/${obj.id }" class="kcgmbtn" target="_blank">立即进入</a> 讲师：<span
+                                <a href="/course/${obj.id }" class="kcgmbtn" target="_blank">立即进入</a> <span
                                     class="yew" title=""> <a>${obj.teacher }</a></span>
                             </p>
                         </li>

@@ -1,6 +1,8 @@
 package com.qihang.controller;
 
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,8 +23,18 @@ public class KcxyController {
 	
 	@RequestMapping("/zyxz")
 	public String zyxz(Model model){
+		Pattern pattern = Pattern.compile("href=\"(.*)\" titl");
+
 		//获取内容
 		List<Content> list = contentService.findByCode("zyxz");
+		for (Content content : list) {
+			String href = "";
+			Matcher matcher = pattern.matcher(content.getContent());
+			while (matcher.find()){
+				href = matcher.group(1);
+				content.setHref(href);
+			}
+		}
 		model.addAttribute("zyxz", list);
 		return "kcxy/zyxz";
 	}

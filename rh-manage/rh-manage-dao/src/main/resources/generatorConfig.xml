@@ -56,12 +56,12 @@
         domainObjectName：生成的domain类的名字,当表名和domain类的名字有差异时一定要设置，如果不设置，直接使用表名作为domain类的名字；
         可以设置为somepck.domainName，那么会自动把domainName类再放到somepck包里面；
         -->
-        <table tableName="access_log" ></table>
-        <table tableName="admin" ></table>
-        <table tableName="content" ></table>
-        <table tableName="content_category" ></table>
+        <!--<table tableName="access_log" ></table>-->
+        <!--<table tableName="admin" ></table>-->
+        <!--<table tableName="content" ></table>-->
+        <!--<table tableName="content_category" ></table>-->
         <table tableName="course" ></table>
-        <table tableName="guest_book" ></table>
-        <table tableName="news" ></table>
+        <!--<table tableName="guest_book" ></table>-->
+        <!--<table tableName="news" ></table>-->
     </context>
 </generatorConfiguration>

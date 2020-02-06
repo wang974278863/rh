@@ -58,17 +58,6 @@ public class CourseController {
 		if (StringUtils.isBlank(course.getTeacher())) {
 			return new RetInfo(Constants.FAIL, "讲师不能为空！");
 		}
-
-		if (StringUtils.isBlank(course.getType())) {
-			return new RetInfo(Constants.FAIL, "请选择课程类型！");
-		}
-
-		if ("1".equals(course.getType())) { //视频
-			if(StringUtils.isBlank(course.getVideoUrl())){
-				return new RetInfo(Constants.FAIL, "请输入视频链接地址！");
-			}
-		}
-
 		courseService.insert(course);
 		cacheService.clearCache("kcxy");
 		return new RetInfo(Constants.SUCCESS);
@@ -89,12 +78,7 @@ public class CourseController {
 		courseDB.setTitle(course.getTitle());
 		courseDB.setPic(course.getPic());
 		courseDB.setTeacher(course.getTeacher());
-		if ("1".equals(course.getType())) { // 视频
-			courseDB.setVideoUrl(course.getVideoUrl());
-			courseDB.setVideoIntroduction(course.getVideoIntroduction());
-		} else {
-			courseDB.setContent(course.getContent());
-		}
+		courseDB.setContent(course.getContent());
 		courseService.update(courseDB);
 		cacheService.clearCache("kcxy");
 		return new RetInfo(Constants.SUCCESS);

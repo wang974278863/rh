@@ -1,6 +1,5 @@
 package com.qihang.controller;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.qihang.common.pojo.Page;
-import com.qihang.pojo.Content;
 import com.qihang.service.ContentService;
 
 @RequestMapping("/zszx")

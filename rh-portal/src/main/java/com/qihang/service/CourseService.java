@@ -5,10 +5,10 @@ import com.qihang.pojo.Course;
 
 public interface CourseService {
 
-	Page findByPage(Page page,Course course);
-	
 	Course getById(Integer id);
-	
+
+	Page findByPage(Page page,Course course);
+
 	
 	
 }

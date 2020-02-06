@@ -42,6 +42,7 @@ public class ContentServiceImpl implements com.qihang.service.ContentService {
 
 	@Override
 	public Page findByPage(String code, Page page) {
+		page.setOrder("update_date desc");
 		PageHelper.startPage(page.getCurrentPage(), page.getPageSize(), page.getOrder());
 		Map<String, String> parameter = new HashMap<>();
 		parameter.put("code", code);

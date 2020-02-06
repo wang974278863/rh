@@ -10,7 +10,7 @@
 					<img src="/images/weixin2.png" alt="锐衡教育官方微信" width="140">合肥锐衡教育微信二维码<br>微信号：HFQHDQ
 				</li>
 				<li>
-					<img src="/images/weixin.png" alt="锐衡教育二维码" width="140"> 合肥锐衡教育QQ官方群二维码<br>QQ群号：593221831
+					<img src="/images/rth-weixin.png" alt="锐衡教育二维码" width="140"> 合肥锐衡教育QQ官方群二维码<br>QQ群号：593221831
 				</li>
 			</ul>
 		</div>
@@ -92,7 +92,7 @@
 	<!--ending-->
 	<div class="msend center w980">
 		<br> 合肥锐衡教育：合肥区总部 Copyright @ 2020 &nbsp;All rights
-		reserved<br> TEL：400-6600-246 EMAIL：mscnedu@163.com<br>
+		reserved<br> TEL：18155193210 EMAIL：16653162@qq.com<br>
 		地址：安徽省合肥市经济技术开发区蓬莱花园小区23栋（安徽建筑大学南区北门西100米）<br><span style="font-weight: bold;font-size:14px; color: #009EE5;">当天游客访问量：<%=QHServletContextListener.totalAccessNum %>  </span><br>
 	</div>
 </div>

@@ -25,10 +25,9 @@
 				<tr class="text-c">
 					<th width="5%">ID</th>
 					<th width="15%">标题</th>
-					<th width="5%">类型</th>
 					<th width="10%">讲师</th>
 					<th width="20%">缩略图</th>
-					<th width="10%">创建时间</th>
+					<th width="10%">更新时间</th>
 					<th width="15%">操作</th>
 				</tr>
 			</thead>
@@ -40,10 +39,6 @@
 								<td>${obj.id }</td>
 								<td class="text-l">
 									${obj.title }
-								</td>
-								<td>
-									<c:if test="${obj.type eq '1' }">视频</c:if>
-									<c:if test="${obj.type eq '2' }">文字</c:if>
 								</td>
 								<td>${obj.teacher }</td>
 								<td>
