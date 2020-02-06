@@ -82,10 +82,7 @@ public class LoginController {
 	@RequestMapping("/logout")
 	public String logout(HttpSession session,HttpServletRequest request) {
 		session.invalidate();
-		StringBuffer url = request.getRequestURL();  
-		String tempContextUrl = url.delete(url.length() - request.getRequestURI().length(), url.length()).append("/").toString();
-		System.out.println(tempContextUrl);
-		return "redirect:" + tempContextUrl;
+		return "redirect:/";
 	}
 	
 }
