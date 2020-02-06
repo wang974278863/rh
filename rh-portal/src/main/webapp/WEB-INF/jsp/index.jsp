@@ -132,9 +132,8 @@
                 <div class="line2 theme"></div>
             </div>
             <div>
-                <img class="img-responsive" src="images/ggxx.jpg" alt="公告信息">
                 <ul class="list-unstyled list-new">
-                    <c:forEach items="${xyzx }" var="obj">
+                    <c:forEach items="${xyzx }"  begin="0" end="5" step="1"  var="obj">
                         <li>
                             <a href="/zszx/view/${obj.id }">${obj.title }</a><a href="/zszx/view/${obj.id }"
                                                                                 class="public-detail">查看详情&gt;&gt;</a>
@@ -160,8 +159,7 @@
                 <div class="line2 theme"></div>
             </div>
             <div>
-                <img class="img-responsive" src="images/ggxx.jpg" alt="开班时间">
-                <c:forEach items="${kbsj }" var="obj">
+                <c:forEach  var="obj" begin="0" end="4" step="1" items="${kbsj }">
                     <ul class="list-unstyled list-new">
                         <li>
                             <a href="/zszx/view/${obj.id }" title="${obj.title }">
@@ -193,7 +191,7 @@
             </div>
             <div>
                 <ul class="video1 ">
-                    <c:forEach items="${kcxy }" var="obj">
+                    <c:forEach items="${kcxy }"  begin="0" end="2" step="1"  var="obj">
                         <li>
                             <a href="/course/${obj.id }" target="_blank" class="pic"><img src="${obj.pic }"
                                                                                           title=""></a>
@@ -226,10 +224,9 @@
                 <div class="line2 theme"></div>
             </div>
             <div class="life">
-                <!-- 				<img class="img-responsive" src="images/ggxx.jpg" alt="学员风采"> -->
                 <div class="listimg">
                     <ul>
-                        <c:forEach items="${xyfc }" var="obj" varStatus="status">
+                        <c:forEach items="${xyfc }"  begin="0" end="5" step="1"  var="obj" varStatus="status">
                             <li class="<c:if test="${((status.index + 1) % 4) eq 0 }">pr0</c:if>">
                                 <a href="/xyfc/${obj.id }" title="${obj.title }" target="_blank">
                                     <img class="lazy" src="${obj.pic }" width="180" height="115"
@@ -262,7 +259,7 @@
                 <div class="line2 theme"></div>
             </div>
             <ul class="list-unstyled list-new">
-                <c:forEach items="${guestBooks }" var="obj">
+                <c:forEach items="${guestBooks }"  begin="0" end="3" step="1"  var="obj">
                     <li>
                         <a href="/guestBook/${obj.id}">
                             <font color="red">

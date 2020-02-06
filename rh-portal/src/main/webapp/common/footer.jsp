@@ -10,7 +10,7 @@
 					<img src="/images/weixin2.png" alt="锐衡教育官方微信" width="140">合肥锐衡教育微信二维码<br>微信号：HFQHDQ
 				</li>
 				<li>
-					<img src="/images/rth-weixin.png" alt="锐衡教育二维码" width="140"> 合肥锐衡教育QQ官方群二维码<br>QQ群号：593221831
+					<img src="/images/qq_baoming.png" alt="锐衡教育二维码" width="140"> 合肥锐衡电气培训报名群二维码<br>QQ群号：727013424
 				</li>
 			</ul>
 		</div>
