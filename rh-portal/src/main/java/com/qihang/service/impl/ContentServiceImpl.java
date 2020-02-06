@@ -32,6 +32,7 @@ public class ContentServiceImpl implements com.qihang.service.ContentService {
 	public List<Content> findByCode(String code) {
 		ContentExample example = new ContentExample();
 		example.createCriteria().andCategoryCodeEqualTo(code);
+		example.setOrderByClause("update_date desc");
 		return contentMapper.selectByExampleWithBLOBs(example);
 	}
 
