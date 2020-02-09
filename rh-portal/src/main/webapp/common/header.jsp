@@ -82,6 +82,10 @@ $(function(){
 					<a href="/">首页</a>
 				</li>
 
+				<li class="<c:if test="${module eq 'jybz' }">active</c:if> dropdown nav-top">
+					<a href="/jybz" class="dropdown-toggle on" data-toggle="dropdown">业务范围</a>
+				</li>
+
 				<li class="<c:if test="${module eq 'zszx' }">active</c:if> dropdown nav-top">
 					<a href="/zszx/kbsj" class="dropdown-toggle on" data-toggle="dropdown">招生在线</a>
 					<ul class="dropdown-menu">
@@ -95,21 +99,18 @@ $(function(){
 					<a href="/xytd">学员天地</a>
 				</li>
 				
-				<li class="<c:if test="${module eq 'jybz' }">active</c:if> dropdown nav-top">
-					<a href="/jybz" class="dropdown-toggle on" data-toggle="dropdown">就业保障</a>
-				</li>
-				
+
 				<li class="<c:if test="${module eq 'kcxy' }">active</c:if> dropdown nav-top">
 					<a href="/course/list" class="dropdown-toggle on" data-toggle="dropdown">培训科目</a>
 					<ul class="dropdown-menu">
 						<li><a href="/course/list">锐衡学堂</a></li>
-						<li><a href="/kcxy/xynr">学习内容</a></li>
+						<%--<li><a href="/kcxy/xynr">学习内容</a></li>--%>
 						<li><a href="/kcxy/zyxz">资源下载</a></li>
 					</ul>
 				</li>
 				
 				<li class="<c:if test="${module eq 'aboutsUS' }">active</c:if> nav-top">
-					<a href="/aboutsUS">关于锐衡教育</a>
+					<a href="/aboutsUS">关于锐衡</a>
 				</li>
 				
 			</ul>

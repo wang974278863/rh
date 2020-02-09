@@ -44,7 +44,7 @@ public class KcxyController {
 	public String kcxy(Model model,@PathVariable String code){
 		//获取内容
 		List<Content> list2 = contentService.findByCode(code);
-		if(list2 != null && list2.size() == 1){
+		if(list2 != null){
 			model.addAttribute("obj", list2.get(0));
 		}
 		

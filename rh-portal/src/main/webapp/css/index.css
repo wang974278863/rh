@@ -77,6 +77,8 @@
 .list-new li{
 	border-bottom:1px dashed #eae7e7;
 	line-height:40px;
+	overflow: hidden;
+	text-overflow:ellipsis;
 }
 .list-new a{
 	text-decoration:none;

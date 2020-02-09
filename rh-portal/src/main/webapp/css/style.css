@@ -35,19 +35,19 @@
 
 /*课程体系*/
 
-.video1 li{ float:left; width:24%; _width:218px; height:200px; padding:5px; font-size:14px;border:0px solid transparent; margin:10px 5px; _margin:10px 2px; _display:inline; position:relative;}
+.video1 li{ float:left; width:33%; _width:218px; height:200px; padding:5px; font-size:14px;border:0px solid transparent; _margin:10px 2px; _display:inline; position:relative;}
 .video1 li i{ background:url(../../jy_images/kcico.png) no-repeat; width:43px; height:19px; position:absolute; right:5px; top:-1px; z-index:2}
 .video1 li i.mf{ background-position: 0 0}
 .video1 li i.zx{ background-position: -54px 0}
 .video1 li i.rm{ background-position:-106px 0}
 
-.video1 li:hover{  padding:5px;font-size:14px;margin:10px 5px; border:0px solid transparent; background:#FFF;}
-.video1 li a.pic{ width:130px; height:135px; border:1px solid #eee;display: block;border:1px solid #eee; overflow:hidden; z-index:1;}
-.video1 li img { width:220px; height:135px; -moz-transition: all 1s ease 0s;-o-transition: all 1s ease 0s;-webkit-transition: all 1s ease 0s;transition: all 1s ease 0s;}
+/*.video1 li:hover{  padding:5px;font-size:14px;margin:10px 5px; border:0px solid transparent; background:#FFF;}*/
+.video1 li a.pic{  height:135px; border:1px solid #eee;display: block;border:1px solid #eee; overflow:hidden; z-index:1;}
+.video1 li img {  height:135px; -moz-transition: all 1s ease 0s;-o-transition: all 1s ease 0s;-webkit-transition: all 1s ease 0s;transition: all 1s ease 0s;}
 .video1 li a:hover img	{-webkit-transform: scale(1.2);-moz-transform: scale(1.2);-ms-transform: scale(1.2);-o-transform: scale(1.2);transform: scale(1.2);}
 
 .video1 h4{ font-size:14px; height:40px; line-height:40px; overflow:hidden}
-.video1 li p { color:#323433; width:130px;  height:24px; text-decoration:none;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;word-wrap: normal;}
+.video1 li p { color:#323433;  height:24px; text-decoration:none;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;word-wrap: normal;}
 .video1 li p a:hover{ color:#62B4F7; text-decoration:none;}
 .video1 li span.yew { color:#ff5a00}
 

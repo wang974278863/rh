@@ -24,9 +24,9 @@ public class JybzController {
 	@RequestMapping("")
 	public String index(Model model){
 		model.addAttribute("module", "jybz");
-		//职业规划指导
+		//职业技能培训
 		String code1 = "zyghzd";
-		//企业招聘
+		//施工图设计
 		String code2 = "qyzp";
 		//学员简历及就业指导 
 		String code3 = "xyjljjyzd";

@@ -23,7 +23,7 @@
 				<div class="news">
 					<div class="title">
 						<span style="font-size: 25px;color: #CD2626;">
-							职业规划指导
+							职业技能培训
 						</span>
 					</div><!--title end-->
 					<div class="listcont">
@@ -50,7 +50,7 @@
 				<div class="news">
 					<div class="title">
 						<span style="font-size: 25px;color: #9400D3;">
-							企业招聘
+							施工图设计
 						</span>
 					</div><!--title end-->
 					<div class="listcont">
@@ -76,7 +76,7 @@
 				<div class="news">
 					<div class="title">
 						<span style="font-size: 25px;color: #3A5FCD;">
-							学员简历及就业指导
+							考证及升职培训
 						</span>
 					</div><!--title end-->
 					<div class="listcont">
@@ -84,7 +84,7 @@
 							<c:forEach items="${xyjljjyzd }" var="obj">
 								<dd>
 									<span>
-										<fmt:formatDate value="${obj.createDate }" pattern="yyyy-MM-dd"/>
+										<fmt:formatDate value="${obj.updateDate }" pattern="yyyy-MM-dd"/>
 									</span>
 									<a href="/zszx/view/${obj.id }" target="_blank" title="${obj.title }">
 										${obj.title }

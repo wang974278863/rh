@@ -54,12 +54,12 @@
 		</dd>
 	</dl>
 		<dl id="menu-article">
-			<dt><i class="Hui-iconfont">&#xe613;</i> 就业保障<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe613;</i> 业务范围<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="${ctx}/content/list/zyghzd" data-title="职业规划指导 " href="javascript:void(0)">职业规划指导 </a></li>
-					<li><a data-href="${ctx}/content/list/qyzp" data-title="企业招聘 " href="javascript:void(0)">企业招聘 </a></li>
-					<li><a data-href="${ctx}/content/list/xyjljjyzd" data-title="学员简历及就业指导 " href="javascript:void(0)">学员简历及就业指导</a></li>
+					<li><a data-href="${ctx}/content/list/zyghzd" data-title="职业技能培训" href="javascript:void(0)">职业技能培训</a></li>
+					<li><a data-href="${ctx}/content/list/qyzp" data-title="施工图设计" href="javascript:void(0)">施工图设计</a></li>
+					<li><a data-href="${ctx}/content/list/xyjljjyzd" data-title="考证及升职培训" href="javascript:void(0)">考证及升职培训</a></li>
 					<li><a data-href="${ctx}/content/list/cgal" data-title="成功案例 " href="javascript:void(0)">成功案例</a></li>
 			</ul>
 		</dd>
@@ -77,13 +77,13 @@
 			<dd>
 				<ul>
 					<li><a data-href="${ctx}/course/list" data-title="锐衡学堂" href="javascript:void(0)">锐衡学堂</a></li>
-					<li><a data-href="${ctx}/content/list/xynr" data-title="培训科目" href="javascript:void(0)">学习内容</a></li>
+					<%--<li><a data-href="${ctx}/content/list/xynr" data-title="培训科目" href="javascript:void(0)">学习内容</a></li>--%>
 					<li><a data-href="${ctx}/content/list/zyxz" data-title="资源下载" href="javascript:void(0)">资源下载</a></li>
 			</ul>
 		</dd>
 	</dl>
 		<dl id="menu-article">
-			<dt><i class="Hui-iconfont">&#xe613;</i> 关于锐衡教育<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe613;</i> 关于锐衡<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
 					<li><a data-href="${ctx}/content/list/gywm" data-title="关于我们" href="javascript:void(0)">关于我们</a></li>
