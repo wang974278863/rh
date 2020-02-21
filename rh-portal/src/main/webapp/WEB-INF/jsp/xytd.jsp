@@ -56,7 +56,7 @@
 <!-- 			</div> -->
 			<div class="cn1">
 				<div class="life">
-					<div class="title">
+					<div class="title col-sm-12 col-md-4">
 						<img class="lazy" src="/images/title_4.png" data-original="/templets/default/images/student/title_4.png" width="278" height="67" alt="学员风采" style="display: inline;">
 						<p>
 							<b><font color="#ff0000">欢迎您加入合肥锐衡教育大家庭！</font></b>
@@ -66,7 +66,7 @@
 						</p>
 						<a class="more" href="/xyfc/list" target="_blank">点击查看更多&gt;&gt;</a>
 					</div><!--title end-->
-					<div class="listimg">
+					<div class="listimg col-sm-12 col-md-8">
 						<ul>
 							<c:forEach items="${xyfczs }" var="obj" varStatus="status">
 								<li class="<c:if test="${((status.index + 1) % 4) eq 0 }">pr0</c:if>">
@@ -81,14 +81,14 @@
 				</div><!--life end-->
 				
 				<div class="life">
-					<div class="title">
+					<div class="title col-sm-12 col-md-4">
 						<img class="lazy" src="/images/title_5.png" data-original="/images/title_5.png" width="278" height="67" alt="学生作品" style="display: inline;">
 						<p>
 							永远都不要停止学习的步伐，即使你有万般理由，磨石都会伴你在平凡的人生里活出更多精彩。
 						</p>
 						<a class="more" href="/xszpz/list">点击查看更多&gt;&gt;</a>
 					</div><!--title end-->
-					<div class="listimg">
+					<div class="listimg col-sm-12 col-md-8">
 						<ul>
 							<c:forEach items="${xszpz }" var="obj" varStatus="status">
 								<li class="<c:if test="${((status.index + 1) % 4) eq 0 }">pr0</c:if>">

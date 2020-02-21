@@ -11,27 +11,27 @@
 @charset "utf-8";
 
 /*底部帮助*/
-#hp{ width:1170px; overflow:hidden; background:#f4f4f4; padding-top:10px;margin: 0 auto;}
+#hp{ width: 100%; overflow:hidden; background:#f4f4f4; padding-top:10px;margin: 0 auto;}
 #hp a:hover{ color:#ff6600;}
-	.hb{ width:1100px;   margin:0px auto; overflow:hidden;}
-	.tw{ float:left; width:150px;  margin-top:10px;}
-	.tw li{ padding:10px 0px; text-align:center; line-height:24px;}
+	.hb{ width:100%; max-width: 1170px;  margin:0px auto; overflow:hidden;}
+	.tw{ margin-top:10px; text-align: center;}
+	.tw li{ padding:10px 0px; text-align:center; line-height:24px; display: inline-block;}
 	.tw li a{ color:#0000FF; text-decoration:underline;word-break: break-word;}
-	.htt{ width:890px; float:right; height:auto; overflow:hidden; padding:15px 0px; line-height:24px;}
+	.htt{ width: 100%; max-width:890px; height:auto; overflow:hidden; padding:15px 0px; line-height:24px;}
 	.htt .htttitle{ height:24px; text-indent:12px;}
-	.htt li{ float:left; padding-right:30px;}
+	.htt li{ float:left; padding-right:16px;}
 	
 	/*友情链接*/
-	.yl{ width:980px;  margin:0px auto; padding-top:10px;overflow: hidden;}
-	.yl .yltitle{ width:980px;   line-height:24px; clear:both;}
+	.yl{ width:100%; max-width: 980px;  margin:0px auto; padding-top:10px;overflow: hidden;}
+	.yl .yltitle{ width:100%; max-width: 980px; line-height:24px; clear:both;}
 	.yl .yltitle a{ color:#0000FF;}
 	.yl ul{ float:left;}
 	.yl li{ height:24px; float:left; line-height:24px; padding-right:20px;}
 	
-	.msend{ width:980px; height:160px;border-top:1px solid #dcdcdc;  line-height:28px;  margin:0px auto; text-align:center;}
+	.msend{ width:100%; max-width: 980px; height:160px;border-top:1px solid #dcdcdc;  line-height:28px;  margin:0px auto; text-align:center;}
 	.msend a{ color:#0000FF; text-decoration:underline;}
 	
-	.msn1{ width:980px; height:50px; padding-top:10px; margin:0px auto; text-align:center;}
+	.msn1{ width:100%; max-width: 980px; height:50px; padding-top:10px; margin:0px auto; text-align:center;}
 	
 	 .floatnv {position: fixed;_position: absolute;top: 0px;width:207px;overflow: hidden; left:0px; z-index:900;}
 

@@ -29,11 +29,20 @@
 						<h4>
 							<a href="/course/${obj.id }" target="_blank" title="${obj.title }">${obj.title }</a>
 						</h4>
-						<p>
-							<a href="/course/${obj.id }" class="kcgmbtn" target="_blank">立即进入</a>
+						<div>
+							<p class="col-sm-12 col-md-8" style="overflow: auto; white-space: normal; height: auto;">
+								<span class="yew" title="">讲师：<a>${obj.teacher }</a>
+								</span>
+							</p>
+							<p class="col-sm-12 col-md-4">
+								<a href="/course/${obj.id }" class="kcgmbtn" target="_blank">立即进入</a>
+							</p>
+
+							<!-- <a href="/course/${obj.id }" class="kcgmbtn" target="_blank">立即进入</a>
 							讲师： <span class="yew" title=""> <a>${obj.teacher }</a>
-							</span>
-						</p>
+							</span> -->
+
+						</div>
 				</li>
 				
 				

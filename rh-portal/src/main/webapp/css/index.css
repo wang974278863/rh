@@ -76,9 +76,10 @@
 }
 .list-new li{
 	border-bottom:1px dashed #eae7e7;
-	line-height:40px;
+	line-height: 1.6;
 	overflow: hidden;
 	text-overflow:ellipsis;
+	margin-bottom: 10px;
 }
 .list-new a{
 	text-decoration:none;
@@ -91,10 +92,19 @@
 .list-new span{
 	float:right;
 }
-
+.list-new .public-title{
+	display: inline-block;
+	width: 76%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
 .list-new .public-detail{
 	float:right;
 	color:#d30a1c;
+	width: 20%;
+	text-align: right;
+	margin-left: 2%;
 }
 
 .row-2{

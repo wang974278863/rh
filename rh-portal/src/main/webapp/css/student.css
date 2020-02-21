@@ -1,8 +1,8 @@
 #div1{ width:auto; height:100%;}
 
-	#cont{ width:1100px; height:auto; overflow:hidden; margin:0px auto; padding-top:10px;}
+	#cont{ width:100%; max-width:1100px; height:auto; overflow:hidden; margin:0px auto; padding-top:10px;}
 	
-		.cn1{ width:1100px; height:auto; overflow:hidden; padding-bottom:10px;}
+		.cn1{ width: 100%; max-width:1100px; height:auto; overflow:hidden; padding-bottom:10px;}
 		.cn1 .news{ float:left; width:810px; height:237px;}
 		     .news .title{ height:67px;}
 			 .news .listcont{ height:170px;}
@@ -43,12 +43,12 @@
 				 .s9{ background:url(../images/student/cn1_4.png) no-repeat 0px -600px;}
 			 
 			 /*风采*/
-			 .life{ width:1100px; height:auto; overflow:hidden; padding-bottom:10px;}
-			 .life .title{ float:left; width:278px; height:auto; overflow:hidden; line-height:24px;}
+			 .life{ width:100%; max-width:1100px; height:auto; overflow:hidden; padding-bottom:10px;}
+			 .life .title{ width: 100%; max-width: 278px; height:auto; overflow:hidden; line-height:24px;}
 			 .life .title p{ clear:both; text-indent:2em; padding-top:5px;}
 			 .life .title .more{ display:block; float:right; color:#0033CC;}
-			 .life .listimg{ float:right; width:810px; height:auto; overflow:hidden;}
-			 .life .listimg li{ float:left; width:187px; height:150px; padding-bottom:10px; padding-right:20px;}
+			 .life .listimg{ width: 100%; max-width:810px; height:auto; overflow:hidden;}
+			 .life .listimg li{float: left; width: 100%; max-width: 187px; height:150px; padding-bottom:10px; padding-right:20px;}
 			 .life .listimg .pr0{ padding-right:0;}
 			 
 			 .life .listimg li a{ display:block; height:140px; padding-top:6px; background:#f2f2f2; text-align:center; line-height:18px; }

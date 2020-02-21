@@ -36,9 +36,9 @@ public class ContentController {
 		model.addAttribute("content", content);
 		return "content/view";
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 }

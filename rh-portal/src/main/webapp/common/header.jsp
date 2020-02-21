@@ -25,6 +25,9 @@ $(function(){
 });
 </script>
 <style type="text/css">
+	.nav>li{
+		display: inline-block;
+	}
 	.nav>li.active {
 		background-color: #005197;
 	}
@@ -65,11 +68,11 @@ $(function(){
 <!-- 顶部 -->
 
 <!-- 公司logo -->
-<div class="container title-logo" style="width: 1349px;margin: 0 auto 15px auto;">
+<div class="container title-logo" style="width: 100%; max-width: 1170px; margin: 0 auto 15px auto;">
 	<div class="row">
-        <div class="col-xs-12" style="text-align:center;">
+        <div style="text-align:center;">
 			<a href="/">
-				<img src="${logo[0].pic }" alt="网站logo" width="1170">
+				<img src="${logo[0].pic }" alt="网站logo" width="100%">
 			</a>
         </div>
     </div>
@@ -77,7 +80,7 @@ $(function(){
 
 <nav class="navbar" role="navigation">
 	<div class="container" style="padding-left: 0px;padding-right: 0px;background-color: #f8f8f8;border-bottom: 3px solid #005197;">
-			<ul class="nav navbar-nav" style="width:100%;">
+			<ul class="nav" style="width:100%;">
 				<li class="<c:if test="${module eq 'index' }">active</c:if> nav-top">
 					<a href="/">首页</a>
 				</li>

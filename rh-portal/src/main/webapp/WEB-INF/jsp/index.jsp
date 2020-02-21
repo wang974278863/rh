@@ -95,12 +95,12 @@
 <!-- ##########页首（end）########## -->
 
 <!-- ##########主体########## -->
-<div class="container" style="width: 1200px;">
+<div class="container" style="width: 100%; max-width: 1170px;">
     <!-- 栏目 -->
     <div class="row">
 
         <!-- 公司简介 -->
-        <div class="col-md-6">
+        <div class="col-sm-6">
 			<span class="part1">
 				<a href="#">公司简介</a>
 			</span>
@@ -120,7 +120,7 @@
             </div>
         </div>
         <!-- 公司新闻-->
-        <div class="col-md-6">
+        <div class="col-sm-6">
 			<span class="part1">
 				<a href="#">公司新闻</a>
 			</span>
@@ -135,8 +135,8 @@
                 <ul class="list-unstyled list-new">
                     <c:forEach items="${xyzx }"  begin="0" end="5" step="1"  var="obj">
                         <li>
-                            <a href="/zszx/view/${obj.id }">${obj.title }</a><a href="/zszx/view/${obj.id }"
-                                                                                class="public-detail">查看详情&gt;&gt;</a>
+                            <a href="/zszx/view/${obj.id }" class="public-title">${obj.title }</a>
+                            <a href="/zszx/view/${obj.id }" class="public-detail">查看详情&gt;&gt;</a>
                         </li>
                     </c:forEach>
                 </ul>
@@ -147,7 +147,7 @@
     <div class="row row-2">
 
         <!-- 开班时间 -->
-        <div class="col-md-6">
+        <div class="col-sm-6">
 			<span class="part1">
 				<a href="#">开班时间</a>
 			</span>
@@ -162,21 +162,22 @@
                 <c:forEach  var="obj" begin="0" end="4" step="1" items="${kbsj }">
                     <ul class="list-unstyled list-new">
                         <li>
-                            <a href="/zszx/view/${obj.id }" title="${obj.title }">
+                            <a href="/zszx/view/${obj.id }" title="${obj.title }" class="public-title">
                                 <c:if test="${fn:length(obj.title)>136 }">
                                     ${fn:substring(obj.title, 0, 136)}...
                                 </c:if>
                                 <c:if test="${fn:length(obj.title)<=136 }">
                                     ${obj.title }
                                 </c:if>
-                            </a><a href="/zszx/view/${obj.id }" class="public-detail">查看详情>></a>
+                            </a>
+                            <a href="/zszx/view/${obj.id }" class="public-detail">查看详情>></a>
                         </li>
                     </ul>
                 </c:forEach>
             </div>
         </div>
         <!-- 培训科目 -->
-        <div class="col-md-6">
+        <div class="col-sm-6">
 			<span class="part1">
 				<a href="#">培训科目</a>
 			</span>
@@ -212,7 +213,7 @@
     <div class="row row-2">
 
         <!-- 学员风采 -->
-        <div class="col-md-12">
+        <div class="col-sm-12">
 			<span class="part1">
 				<a href="#">学员风采</a>
 			</span>
@@ -245,7 +246,7 @@
     <div class="row">
 
         <!-- 公司新闻 -->
-        <div class="col-md-7">
+        <div class="col-sm-7">
 			<span class="part1">
 				<a href="#">留言板</a>
 			</span>
@@ -275,18 +276,18 @@
                 </c:forEach>
             </ul>
 
-            <div style="margin-top: 20px">
+            <div style="margin-top: 20px; margin-bottom: 20px; text-align: center;">
                 <a onclick="goGuestBook();"
-                   style="background: #39a4dc;color: #fff;font-size: 18px;padding: 3px 6px;margin-left: 40%;">我要留言</a>
+                   style="background: #39a4dc;color: #fff;font-size: 16px;padding: 3px 6px;margin-left: 40%; display: inline-block;">我要留言</a>
                 <a href="/guestBook/list"
-                   style="background: #39a4dc;color: #fff;font-size: 18px;padding: 3px 6px;float: right;"
+                   style="background: #39a4dc;color: #fff;font-size: 16px;padding: 3px 6px;float: right;"
                    target="_blank">查看更多留言</a>
             </div>
         </div>
 
 
         <!-- 校长寄语 -->
-        <div class="col-md-5">
+        <div class="col-sm-5">
 			<span class="part1">
 				<a href="#">校长寄语</a>
 			</span>
