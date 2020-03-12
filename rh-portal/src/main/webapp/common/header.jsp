@@ -92,9 +92,7 @@ $(function(){
 				<li class="<c:if test="${module eq 'zszx' }">active</c:if> dropdown nav-top">
 					<a href="/zszx/kbsj" class="dropdown-toggle on" data-toggle="dropdown">招生在线</a>
 					<ul class="dropdown-menu">
-						<li><a href="/zszx/kbsj">开班时间</a></li>
-						<li><a href="/zszx/jydl">结业典礼</a></li>
-						<li><a href="/zszx/kcdg">课程大纲</a></li>
+						<li><a href="/zszx/kbsj">开班时间及结业典礼</a></li>
 					</ul>
 				</li>
 				
